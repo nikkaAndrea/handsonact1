@@ -1,0 +1,35 @@
+<div>
+  <button class="add-product-button" (click)="toggleForm()">Add Product</button>
+  
+  <div class="category-container">
+    <select id="category-select" (change)="onCategoryChange($event)" [value]="selectedCategory">
+      <option value="">All Category</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+    <select id="sort-select" (change)="onSortChange($event)" [value]="selectedSortOrder">
+      <option value="">Sort By</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+    </select>
+    <input type="number" [(ngModel)]="productLimit" (change)="loadLimitedProducts(productLimit)" />
+  </div>
+</div>
+
+<div *ngIf="products.length > 0">
+  <ul class="product-grid">
+    <li *ngFor="let product of products" class="product-item">
+      <img [src]="product.image" [alt]="product.title" />
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description }}</p>
+      <p class="price">Price: ${{ product.price }}</p>
+      <div class="button-container">
+        <button class="update-button" (click)="editProduct(product)">Edit</button>
+        <button class="delete-button" (click)="deleteProduct(product.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="products.length === 0">
+  <p>Loading products...</p>
+</div>
