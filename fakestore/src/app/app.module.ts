@@ -6,7 +6,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './product.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'; // Import ReactiveFormsModule and FormsModule
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -18,8 +18,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'; // Import Rea
     HttpClientModule,
     AppRoutingModule,
     CommonModule,
-    ReactiveFormsModule, // Add ReactiveFormsModule to imports
-    FormsModule // Add FormsModule if you are using ngModel elsewhere
+    ReactiveFormsModule,
+    FormsModule 
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
