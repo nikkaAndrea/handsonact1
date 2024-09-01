@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
-
+//nikangina
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
